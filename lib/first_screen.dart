@@ -1,8 +1,10 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/painting.dart';
 class Dart extends StatelessWidget {
-   Dart({super.key});
-  final String value;
-  Dart({required this.value});
+   Dart({super.key,required this.Username,required this.Password,});
+   String Username;
+   String Password;
   @override
   Widget build(BuildContext context) {
     return  Scaffold(backgroundColor: Colors.teal,
@@ -32,7 +34,7 @@ class Dart extends StatelessWidget {
           children: [
             SizedBox(width: 10),
         Icon(Icons.call,size: 20,),
-        SizedBox(width :50),Text('$value'),
+        SizedBox(width :50),Text(Username),
        ],
         ),),
         SizedBox(height: 50,),
@@ -40,12 +42,21 @@ class Dart extends StatelessWidget {
           child: Row(children: [SizedBox(width: 10),
           Icon(Icons.mail,size: 20,),
           SizedBox(width: 50),
-          Text('')
+          Text(Password)
          ],
-         )
-          ),SizedBox(width: 50,)
+          )
+          ),SizedBox(width: 50, child: TextButton(
+             style: TextButton.styleFrom(
+             foregroundColor: Colors.black,
+             backgroundColor: Colors.yellow,
+             padding: const EdgeInsets.all(16.0),
+             textStyle: const TextStyle(fontSize: 20),
+          ),
+             onPressed: ()  {},
+             child: const Text('Login'),),
+           ),
          ],
-    ),
+       ),
     ),
     );
   }

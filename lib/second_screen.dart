@@ -4,8 +4,6 @@ class Login extends StatelessWidget {
   Login({super.key});
   final passwordController = TextEditingController();
   final myController = TextEditingController();
-  final String value;
-  Login({required this.value});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,7 +35,7 @@ class Login extends StatelessWidget {
                 controller: myController,
                 decoration: const InputDecoration(
                   border: UnderlineInputBorder(),
-                  labelText: 'Email or Username',
+                  labelText: 'Username',
                 ),
               ),
               TextField(
@@ -67,7 +65,7 @@ class Login extends StatelessWidget {
                     onPressed: () {
                       print(myController.text);
                       print(passwordController.text);
-                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Dart(),));},
+                    Navigator.push(context,MaterialPageRoute(builder: (context)=>Dart(Username: myController.text,Password: passwordController.text,),));},
                     child: const Text('Login')),
               ),
             ],
